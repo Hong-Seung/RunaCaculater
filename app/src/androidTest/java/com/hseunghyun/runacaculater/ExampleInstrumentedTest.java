@@ -1,4 +1,4 @@
-package hseunghyun.com.runacaculater;
+package com.hseunghyun.runacaculater;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

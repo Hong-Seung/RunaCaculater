@@ -1,4 +1,4 @@
-package hseunghyun.com.runacaculater;
+package com.hseunghyun.runacaculater;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

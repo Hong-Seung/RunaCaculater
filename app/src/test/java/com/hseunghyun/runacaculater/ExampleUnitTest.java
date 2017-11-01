@@ -1,4 +1,4 @@
-package hseunghyun.com.runacaculater;
+package com.hseunghyun.runacaculater;
 
 import org.junit.Test;
 
