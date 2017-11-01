@@ -18,4 +18,10 @@ public class Items {
         this.item = item;
     }
 
+    @Override
+    public String toString() {
+        return "Items{" +
+                "item=" + item +
+                '}';
+    }
 }

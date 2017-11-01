@@ -29,4 +29,11 @@ public class Response {
         this.body = body;
     }
 
+    @Override
+    public String toString() {
+        return "Response{" +
+                "header=" + header +
+                ", body=" + body +
+                '}';
+    }
 }

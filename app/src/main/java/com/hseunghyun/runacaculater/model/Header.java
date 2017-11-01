@@ -29,4 +29,11 @@ public class Header {
         this.resultMsg = resultMsg;
     }
 
+    @Override
+    public String toString() {
+        return "Header{" +
+                "resultCode='" + resultCode + '\'' +
+                ", resultMsg='" + resultMsg + '\'' +
+                '}';
+    }
 }

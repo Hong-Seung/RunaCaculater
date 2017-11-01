@@ -51,4 +51,13 @@ public class Body {
         this.totalCount = totalCount;
     }
 
+    @Override
+    public String toString() {
+        return "Body{" +
+                "items=" + items +
+                ", numOfRows=" + numOfRows +
+                ", pageNo=" + pageNo +
+                ", totalCount=" + totalCount +
+                '}';
+    }
 }

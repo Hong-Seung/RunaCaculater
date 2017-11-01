@@ -18,4 +18,10 @@ public class Runa {
         this.response = response;
     }
 
+    @Override
+    public String toString() {
+        return "Runa{" +
+                "response=" + response +
+                '}';
+    }
 }

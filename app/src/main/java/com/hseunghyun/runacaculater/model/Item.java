@@ -8,7 +8,7 @@ public class Item {
 
     @SerializedName("lunDay")
     @Expose
-    private Integer lunDay;
+    private int lunDay;
     @SerializedName("lunIljin")
     @Expose
     private String lunIljin;
@@ -17,7 +17,7 @@ public class Item {
     private String lunLeapmonth;
     @SerializedName("lunMonth")
     @Expose
-    private Integer lunMonth;
+    private int lunMonth;
     @SerializedName("lunNday")
     @Expose
     private Integer lunNday;
@@ -29,7 +29,7 @@ public class Item {
     private String lunWolgeon;
     @SerializedName("lunYear")
     @Expose
-    private Integer lunYear;
+    private int lunYear;
     @SerializedName("solDay")
     @Expose
     private String solDay;
@@ -49,7 +49,7 @@ public class Item {
     @Expose
     private Integer solYear;
 
-    public Integer getLunDay() {
+    public int getLunDay() {
         return lunDay;
     }
 
@@ -73,7 +73,7 @@ public class Item {
         this.lunLeapmonth = lunLeapmonth;
     }
 
-    public Integer getLunMonth() {
+    public int getLunMonth() {
         return lunMonth;
     }
 
@@ -105,7 +105,7 @@ public class Item {
         this.lunWolgeon = lunWolgeon;
     }
 
-    public Integer getLunYear() {
+    public int getLunYear() {
         return lunYear;
     }
 
@@ -161,4 +161,23 @@ public class Item {
         this.solYear = solYear;
     }
 
+    @Override
+    public String toString() {
+        return "Item{" +
+                "lunDay=" + lunDay +
+                ", lunIljin='" + lunIljin + '\'' +
+                ", lunLeapmonth='" + lunLeapmonth + '\'' +
+                ", lunMonth=" + lunMonth +
+                ", lunNday=" + lunNday +
+                ", lunSecha='" + lunSecha + '\'' +
+                ", lunWolgeon='" + lunWolgeon + '\'' +
+                ", lunYear=" + lunYear +
+                ", solDay='" + solDay + '\'' +
+                ", solJd=" + solJd +
+                ", solLeapyear='" + solLeapyear + '\'' +
+                ", solMonth='" + solMonth + '\'' +
+                ", solWeek='" + solWeek + '\'' +
+                ", solYear=" + solYear +
+                '}';
+    }
 }
