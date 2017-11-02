@@ -4,11 +4,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
+import android.widget.DatePicker;
 import android.widget.TextView;
 
 import com.hseunghyun.runacaculater.model.Runa;
-import com.hseunghyun.runacaculater.retrofit.RunUtil;
 import com.hseunghyun.runacaculater.retrofit.RunaApi;
 
 import retrofit2.Call;
@@ -20,22 +19,24 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
 
-    private EditText mInputSolaYearEditText;
-    private EditText mInputSolaMonthEditText;
-    private EditText mInputSolaDayEditText;
+//    private EditText mInputSolaYearEditText;
+//    private EditText mInputSolaMonthEditText;
+//    private EditText mInputSolaDayEditText;
     private RunaApi mRunaApiservice;
-    private RunUtil mRunaUtil;
+//    private RunUtil mRunaUtil;
     private TextView outputRunResult;
     private TextView outputRunaResult;
+    private DatePicker mDatePicker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mInputSolaYearEditText = findViewById(R.id.input_sola_year);
-        mInputSolaMonthEditText = findViewById(R.id.input_sola_month);
-        mInputSolaDayEditText = findViewById(R.id.input_sola_day);
+//        mInputSolaYearEditText = findViewById(R.id.input_sola_year);
+//        mInputSolaMonthEditText = findViewById(R.id.input_sola_month);
+//        mInputSolaDayEditText = findViewById(R.id.input_sola_day);
+        mDatePicker = findViewById(R.id.date_picker);
         outputRunResult = findViewById(R.id.output_run_result);
         outputRunaResult = findViewById(R.id.output_runa_result);
 
@@ -58,20 +59,23 @@ public class MainActivity extends AppCompatActivity {
     public void converter() {
 
         // 년 월 일 따로 담는다.
-        String year = mInputSolaYearEditText.getText().toString();
-        String month = null;
-        if (mInputSolaMonthEditText.getText().toString().length() < 2) {
-            month = "0" + mInputSolaMonthEditText.getText().toString();
-        } else {
-            month = mInputSolaMonthEditText.getText().toString();
-        }
-//        Toast.makeText(this, "달"+month, Toast.LENGTH_SHORT).show();
-        String day = null;
-        if (mInputSolaDayEditText.getText().toString().length() < 2) {
-            day = "0" + mInputSolaDayEditText.getText().toString();
-        } else {
-            day = mInputSolaDayEditText.getText().toString();
-        }
+//        String year = mInputSolaYearEditText.getText().toString();
+//        String month = null;
+//        if (mInputSolaMonthEditText.getText().toString().length() < 2) {
+//            month = "0" + mInputSolaMonthEditText.getText().toString();
+//        } else {
+//            month = mInputSolaMonthEditText.getText().toString();
+//        }
+////        Toast.makeText(this, "달"+month, Toast.LENGTH_SHORT).show();
+//        String day = null;
+//        if (mInputSolaDayEditText.getText().toString().length() < 2) {
+//            day = "0" + mInputSolaDayEditText.getText().toString();
+//        } else {
+//            day = mInputSolaDayEditText.getText().toString();
+//        }
+        String year = String.valueOf(mDatePicker.getYear());
+        String month = String.valueOf(mDatePicker.getMonth());
+        String day = String.valueOf(mDatePicker.getDayOfMonth());
 
         mRunaApiservice.caculaterDay(year, month, day).enqueue(new Callback<Runa>() {
             @Override // 성공
