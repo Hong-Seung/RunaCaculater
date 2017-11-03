@@ -20,66 +20,75 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="1900.01.01(1899.12.02)부터 \n2050.12.30(2050.10.17)일까지 \n계산 가능"
+        android:text="1900.01.01(1899.12.01)부터 \n2050.12.31(2050.11.18)일까지 \n계산 가능"
         android:textColor="#000000"
         android:textSize="24dp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <EditText
-        android:id="@+id/input_sola_year"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="2"
-        android:gravity="center"
-        android:hint="년"
-        android:inputType="date"
-        android:maxLength="4"
-        android:textSize="72sp" />
-
-        <EditText
-        android:id="@+id/input_sola_month"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:hint="월"
-        android:inputType="date"
-        android:maxLength="2"
-        android:textSize="72sp" />
-
-        <EditText
-        android:id="@+id/input_sola_day"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:hint="일"
-        android:inputType="date"
-        android:maxLength="2"
-        android:textSize="72sp" />
-
-
-    </LinearLayout>
-
-    <DatePicker
-        android:id="@+id/date_picker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:calendarViewShown="false"
-        android:datePickerMode="spinner"
-        android:scrollbarSize="100dp" />
-
-    <!--<Button-->
-        <!--android:onClick="onClickedDateSelectButton"-->
-        <!--android:id="@+id/date_button"-->
+    <!--<LinearLayout-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="wrap_content"-->
-        <!--android:text="날짜 다이얼로그 보이기" />-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<EditText-->
+        <!--android:id="@+id/input_sola_year"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="2"-->
+        <!--android:gravity="center"-->
+        <!--android:hint="년"-->
+        <!--android:inputType="date"-->
+        <!--android:maxLength="4"-->
+        <!--android:textSize="72sp" />-->
+
+        <!--<EditText-->
+        <!--android:id="@+id/input_sola_month"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="1"-->
+        <!--android:gravity="center"-->
+        <!--android:hint="월"-->
+        <!--android:inputType="date"-->
+        <!--android:maxLength="2"-->
+        <!--android:textSize="72sp" />-->
+
+        <!--<EditText-->
+        <!--android:id="@+id/input_sola_day"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="1"-->
+        <!--android:gravity="center"-->
+        <!--android:hint="일"-->
+        <!--android:inputType="date"-->
+        <!--android:maxLength="2"-->
+        <!--android:textSize="72sp" />-->
+
+
+    <!--</LinearLayout>-->
+
+    <!--<DatePicker-->
+        <!--android:id="@+id/date_picker"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:calendarViewShown="false"-->
+        <!--android:datePickerMode="spinner"-->
+        <!--android:scrollbarSize="100dp" />-->
+
+    <Button
+        android:id="@+id/date_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickedDateSelectButton"
+        android:text="날짜 선택하기" />
+
+    <TextView
+        android:gravity="center"
+        android:textSize="48sp"
+        android:id="@+id/datepicker_textview"
+        android:hint="선택한 날짜"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 
     <Button
         android:layout_width="wrap_content"
@@ -96,6 +105,8 @@
         android:textSize="48sp" />
 
     <TextView
+        android:textSize="24sp"
+        android:gravity="center"
         android:id="@+id/output_runa_result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
