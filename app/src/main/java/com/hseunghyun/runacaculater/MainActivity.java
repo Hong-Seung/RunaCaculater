@@ -179,14 +179,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * datepicker 다이얼로그
+     * datepicker 다이얼로그 (5.0 이상은 달력으로 나온다.(선택을 할 수 가 없다..ㅠㅠ)
      */
     private int mYear;
     private int mMonth;
     private int mDay;
 
     public void onClickedDateSelectButton(View view) {
-        new DatePickerDialog(MainActivity.this, mDateSetListener, mYear, mMonth, mDay).show();
+//        LayoutInflater inflater = LayoutInflater.from(MainActivity.this);
+//        DatePicker datePicker = (DatePicker)inflater.inflate(R.layout.datepicker,null);
+        DatePickerDialog datePickerDialog = new DatePickerDialog(MainActivity.this, mDateSetListener, mYear, mMonth, mDay);
+        // 21 부턴 못씀.
+//        datePickerDialog.getDatePicker().setCalendarViewShown(false);
+//        datePickerDialog.getDatePicker().setSpinnersShown(true);
+        datePickerDialog.show();
+
     }
 
     DatePickerDialog.OnDateSetListener mDateSetListener = new DatePickerDialog.OnDateSetListener() {
@@ -201,6 +208,7 @@ public class MainActivity extends AppCompatActivity {
             UpdateNow();
         }
     };
+
 
     //텍스트뷰의 값을 업데이트 하는 메소드
 
