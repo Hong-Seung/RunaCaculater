@@ -126,6 +126,9 @@ public class MainActivity extends AppCompatActivity {
 //            day = String.valueOf(mDatePicker.getDayOfMonth());
 //        }
 
+        /**
+         * datepicker 다이얼로그
+         */
         String year = String.valueOf(mYear);
         String month = null;
         if (mMonth + 1 < 10) {
