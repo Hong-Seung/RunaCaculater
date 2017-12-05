@@ -1,11 +1,10 @@
 package com.hseunghyun.runacaculater;
 
-import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.hseunghyun.runacaculater.model.Runa;
@@ -20,12 +19,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
 
-//    /**
-//     * EditText 를 이용한 날짜 입력.
-//     */
-//    private EditText mInputSolaYearEditText;
-//    private EditText mInputSolaMonthEditText;
-//    private EditText mInputSolaDayEditText;
+    /**
+     * EditText 를 이용한 날짜 입력.
+     */
+    private EditText mInputSolaYearEditText;
+    private EditText mInputSolaMonthEditText;
+    private EditText mInputSolaDayEditText;
 
     private RunaApi mRunaApiservice;
 
@@ -38,30 +37,30 @@ public class MainActivity extends AppCompatActivity {
 //     */
 //    private DatePicker mDatePicker;
 
-    /**
-     * datepicker 다이얼로그
-     */
-    private TextView mDatepickerTextview;
+//    /**
+//     * datepicker 다이얼로그
+//     */
+//    private TextView mDatepickerTextview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        /**
-//         * EditText 를 이용한 날짜 입력.
-//         */
-//        mInputSolaYearEditText = findViewById(R.id.input_sola_year);
-//        mInputSolaMonthEditText = findViewById(R.id.input_sola_month);
-//        mInputSolaDayEditText = findViewById(R.id.input_sola_day);
+        /**
+         * EditText 를 이용한 날짜 입력.
+         */
+        mInputSolaYearEditText = findViewById(R.id.input_sola_year);
+        mInputSolaMonthEditText = findViewById(R.id.input_sola_month);
+        mInputSolaDayEditText = findViewById(R.id.input_sola_day);
 //        /**
 //         * datepicker 를 이용한 날짜 선택
 //         */
 //        mDatePicker = findViewById(R.id.date_picker);
-        /**
-         * datepicker 다이얼로그
-         */
-        mDatepickerTextview = findViewById(R.id.datepicker_textview);
+//        /**
+//         * datepicker 다이얼로그
+//         */
+//        mDatepickerTextview = findViewById(R.id.datepicker_textview);
 
 
         outputRunResult = findViewById(R.id.output_run_result);
@@ -87,24 +86,24 @@ public class MainActivity extends AppCompatActivity {
     // 레트로핏 부르고 . api에 뭘로 쿼리 할꺼였는지 그 이름 적어주고. 인큐(new call...)
     public void converter() {
 
-//        /**
-//         * EditText 를 이용한 날짜 입력.
-//         */
-//        // 년 월 일 따로 담는다.
-//        String year = mInputSolaYearEditText.getText().toString();
-//        String month = null;
-//        if (mInputSolaMonthEditText.getText().toString().length() < 2) {
-//            month = "0" + mInputSolaMonthEditText.getText().toString();
-//        } else {
-//            month = mInputSolaMonthEditText.getText().toString();
-//        }
-////        Toast.makeText(this, "달"+month, Toast.LENGTH_SHORT).show();
-//        String day = null;
-//        if (mInputSolaDayEditText.getText().toString().length() < 2) {
-//            day = "0" + mInputSolaDayEditText.getText().toString();
-//        } else {
-//            day = mInputSolaDayEditText.getText().toString();
-//        }
+        /**
+         * EditText 를 이용한 날짜 입력.
+         */
+        // 년 월 일 따로 담는다.
+        String year = mInputSolaYearEditText.getText().toString();
+        String month = null;
+        if (mInputSolaMonthEditText.getText().toString().length() < 2) {
+            month = "0" + mInputSolaMonthEditText.getText().toString();
+        } else {
+            month = mInputSolaMonthEditText.getText().toString();
+        }
+//        Toast.makeText(this, "달"+month, Toast.LENGTH_SHORT).show();
+        String day = null;
+        if (mInputSolaDayEditText.getText().toString().length() < 2) {
+            day = "0" + mInputSolaDayEditText.getText().toString();
+        } else {
+            day = mInputSolaDayEditText.getText().toString();
+        }
 //
 //        /**
 //         * datepicker 를 이용한 날짜 선택
@@ -126,22 +125,22 @@ public class MainActivity extends AppCompatActivity {
 //            day = String.valueOf(mDatePicker.getDayOfMonth());
 //        }
 
-        /**
-         * datepicker 다이얼로그
-         */
-        String year = String.valueOf(mYear);
-        String month = null;
-        if (mMonth + 1 < 10) {
-            month = "0" + String.valueOf(mMonth + 1);
-        } else {
-            month = String.valueOf(mMonth + 1);
-        }
-        String day = null;
-        if (mDay < 10) {
-            day = "0" + String.valueOf(mDay);
-        } else {
-            day = String.valueOf(mDay);
-        }
+//        /**
+//         * datepicker 다이얼로그
+//         */
+//        String year = String.valueOf(mYear);
+//        String month = null;
+//        if (mMonth + 1 < 10) {
+//            month = "0" + String.valueOf(mMonth + 1);
+//        } else {
+//            month = String.valueOf(mMonth + 1);
+//        }
+//        String day = null;
+//        if (mDay < 10) {
+//            day = "0" + String.valueOf(mDay);
+//        } else {
+//            day = String.valueOf(mDay);
+//        }
 
 
         mRunaApiservice.caculaterDay(year, month, day).enqueue(new Callback<Runa>() {
@@ -181,42 +180,42 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    /**
-     * datepicker 다이얼로그 (5.0 이상은 달력으로 나온다.(선택을 할 수 가 없다..ㅠㅠ)
-     */
-    private int mYear;
-    private int mMonth;
-    private int mDay;
-
-    public void onClickedDateSelectButton(View view) {
-//        LayoutInflater inflater = LayoutInflater.from(MainActivity.this);
-//        DatePicker datePicker = (DatePicker)inflater.inflate(R.layout.datepicker,null);
-        DatePickerDialog datePickerDialog = new DatePickerDialog(MainActivity.this, mDateSetListener, mYear, mMonth, mDay);
-        // 21 부턴 못씀.
-//        datePickerDialog.getDatePicker().setCalendarViewShown(false);
-//        datePickerDialog.getDatePicker().setSpinnersShown(true);
-        datePickerDialog.show();
-
-    }
-
-    DatePickerDialog.OnDateSetListener mDateSetListener = new DatePickerDialog.OnDateSetListener() {
-        @Override
-        public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-            //사용자가 입력한 값을 가져온뒤
-            mYear = year;
-            mMonth = month;
-            mDay = dayOfMonth;
-
-            //텍스트뷰의 값을 업데이트함
-            UpdateNow();
-        }
-    };
-
-
-    //텍스트뷰의 값을 업데이트 하는 메소드
-
-    void UpdateNow() {
-        mDatepickerTextview.setText(String.format("%d/%d/%d", mYear, mMonth + 1, mDay));
-    }
+//    /**
+//     * datepicker 다이얼로그 (5.0 이상은 달력으로 나온다.(선택을 할 수 가 없다..ㅠㅠ)
+//     */
+//    private int mYear;
+//    private int mMonth;
+//    private int mDay;
+//
+//    public void onClickedDateSelectButton(View view) {
+////        LayoutInflater inflater = LayoutInflater.from(MainActivity.this);
+////        DatePicker datePicker = (DatePicker)inflater.inflate(R.layout.datepicker,null);
+//        DatePickerDialog datePickerDialog = new DatePickerDialog(MainActivity.this, mDateSetListener, mYear, mMonth, mDay);
+//        // 21 부턴 못씀.
+////        datePickerDialog.getDatePicker().setCalendarViewShown(false);
+////        datePickerDialog.getDatePicker().setSpinnersShown(true);
+//        datePickerDialog.show();
+//
+//    }
+//
+//    DatePickerDialog.OnDateSetListener mDateSetListener = new DatePickerDialog.OnDateSetListener() {
+//        @Override
+//        public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+//            //사용자가 입력한 값을 가져온뒤
+//            mYear = year;
+//            mMonth = month;
+//            mDay = dayOfMonth;
+//
+//            //텍스트뷰의 값을 업데이트함
+//            UpdateNow();
+//        }
+//    };
+//
+//
+////    //텍스트뷰의 값을 업데이트 하는 메소드
+////
+////    void UpdateNow() {
+////        mDatepickerTextview.setText(String.format("%d/%d/%d", mYear, mMonth + 1, mDay));
+////    }
 
 }

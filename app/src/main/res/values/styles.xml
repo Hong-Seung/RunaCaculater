@@ -6,6 +6,14 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <!--<item name="colorPrimaryDark2Green">#53AA00</item>-->
+        <!--<item name="colorPrimary2Green">#6BDB00</item>-->
+        <!--<item name="colorJustYellow">#CDFA44</item>-->
+        <!--<item name="colorPrimary">#6BDB00</item>-->
+        <!--<item name="colorPrimaryDark">#53AA00</item>-->
+        <!--<item name="colorAccent">#CDFA44</item>-->
+
+
     </style>
 
 </resources>
