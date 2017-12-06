@@ -3,7 +3,7 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <!--<item name="colorPrimaryDark2Green">#53AA00</item>-->
@@ -12,7 +12,14 @@
         <!--<item name="colorPrimary">#6BDB00</item>-->
         <!--<item name="colorPrimaryDark">#53AA00</item>-->
         <!--<item name="colorAccent">#CDFA44</item>-->
+        <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+        <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+        <!--<item name="colorAccent">@color/colorAccent</item>-->
 
+        <!-- No Title Bar-->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!--출처: http://commin.tistory.com/63 [Commin의 일상코딩]-->
 
     </style>
 

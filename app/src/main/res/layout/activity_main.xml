@@ -4,27 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
     tools:context="com.hseunghyun.runacaculater.MainActivity">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="1391.02.05(1391.01.01)부터 \n2050.12.31(2050.11.18)일까지 \n계산 가능"
-            android:textColor="#000000"
+            android:text="1400년 ~ 2050년 \n변환 가능"
+            android:textColor="#ffffff"
             android:textSize="24sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:text="1391.02.05(1391.01.01)부터 \n2050.12.31(2050.11.18)일까지 \n계산 가능"
+            android:textColor="#ffffff"
+            android:textSize="24sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="1900.01.01(1899.12.01)부터 \n2050.12.31(2050.11.18)일까지 \n계산 가능"
-            android:textColor="#000000"
+            android:textColor="#ffffff"
             android:textSize="24sp"
             android:visibility="gone" />
 
@@ -42,7 +53,9 @@
                 android:hint="년"
                 android:inputType="date"
                 android:maxLength="4"
-                android:textSize="72sp" />
+                android:textColor="#ffffff"
+                android:textColorHint="#858585"
+                android:textSize="56sp" />
 
             <EditText
                 android:id="@+id/input_sola_month"
@@ -53,7 +66,9 @@
                 android:hint="월"
                 android:inputType="date"
                 android:maxLength="2"
-                android:textSize="72sp" />
+                android:textColor="#ffffff"
+                android:textColorHint="#858585"
+                android:textSize="56sp" />
 
             <EditText
                 android:id="@+id/input_sola_day"
@@ -64,7 +79,9 @@
                 android:hint="일"
                 android:inputType="date"
                 android:maxLength="2"
-                android:textSize="72sp" />
+                android:textColor="#ffffff"
+                android:textColorHint="#858585"
+                android:textSize="56sp" />
 
 
         </LinearLayout>
@@ -98,8 +115,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:backgroundTint="#f3efbb"
             android:onClick="onClickedEnterButton"
-            android:text="음력으로 변환" />
+            android:text="음력으로 변환"
+            android:textSize="24sp" />
 
 
         <TextView
@@ -107,16 +127,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_margin="8dp"
             android:hint="음력"
-            android:textSize="48sp" />
+            android:textColor="#ffffff"
+            android:textColorHint="#858585"
+            android:textSize="40sp"
+            tools:text="평 1900년 12월 15일" />
 
         <TextView
             android:id="@+id/output_runa_result"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="8dp"
             android:gravity="center"
             android:hint="음력간지"
-            android:textSize="24sp" />
+            android:paddingBottom="8dp"
+            android:textColor="#ffffff"
+            android:textColorHint="#858585"
+            android:textSize="32sp"
+            tools:text="갑오(갑오)년 갑오(갑오)월 갑오(갑오)일" />
 
     </LinearLayout>
+
 </ScrollView>
