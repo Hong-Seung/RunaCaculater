@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,12 +11,20 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:orientation="vertical">
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            ads:adSize="BANNER"
+            ads:adUnitId="@string/banner_ad_unit_id" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
             android:gravity="center"
             android:text="1400년 ~ 2050년 \n변환 가능"
             android:textColor="#ffffff"
@@ -123,6 +132,18 @@
 
 
         <TextView
+            android:id="@+id/output_sun_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:hint="양력"
+            android:textColor="#fff8ae"
+            android:textColorHint="#858585"
+            android:textSize="24sp"
+            tools:text="1900년 12월 15일" />
+
+        <TextView
             android:id="@+id/output_run_result"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -131,6 +152,7 @@
             android:hint="음력"
             android:textColor="#ffffff"
             android:textColorHint="#858585"
+            android:textIsSelectable="true"
             android:textSize="40sp"
             tools:text="평 1900년 12월 15일" />
 
@@ -144,6 +166,7 @@
             android:paddingBottom="8dp"
             android:textColor="#ffffff"
             android:textColorHint="#858585"
+            android:textIsSelectable="true"
             android:textSize="32sp"
             tools:text="갑오(갑오)년 갑오(갑오)월 갑오(갑오)일" />
 

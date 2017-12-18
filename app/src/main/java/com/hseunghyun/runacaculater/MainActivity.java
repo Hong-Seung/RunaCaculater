@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.hseunghyun.runacaculater.model.Runa;
 import com.hseunghyun.runacaculater.retrofit.RunaApi;
 
@@ -31,6 +33,12 @@ public class MainActivity extends AppCompatActivity {
     //    private RunUtil mRunaUtil;
     private TextView outputRunResult;
     private TextView outputRunaResult;
+    private TextView outputSunResult;
+
+
+    //광고
+    private AdView mAdView;
+
 
 //    /**
 //     * datepicker 를 이용한 날짜 선택
@@ -65,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
         outputRunResult = findViewById(R.id.output_run_result);
         outputRunaResult = findViewById(R.id.output_runa_result);
+        outputSunResult = findViewById(R.id.output_sun_result);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(RunaApi.BASE_URL)
@@ -72,6 +81,14 @@ public class MainActivity extends AppCompatActivity {
                 .build();
 
         mRunaApiservice = retrofit.create(RunaApi.class);
+
+
+        //광고
+        mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice("28A5DF817CB6C88082D4900F3C6D3C73")
+                .build();
+        mAdView.loadAd(adRequest);
 
 
     }
@@ -149,6 +166,11 @@ public class MainActivity extends AppCompatActivity {
                 // respone 에 모든게 들어온다.
                 Runa runa = response.body();
                 assert runa != null;
+
+                outputSunResult.setText(runa.getResponse().getBody().getItems().getItem().getSolYear() + "년 " +
+                        runa.getResponse().getBody().getItems().getItem().getSolMonth() + "월 " +
+                runa.getResponse().getBody().getItems().getItem().getSolDay()+"일");
+
                 outputRunResult.setText(runa.getResponse().getBody().getItems().getItem().getLunLeapmonth() + " " +
                         runa.getResponse().getBody().getItems().getItem().getLunYear() + "년 " +
                         runa.getResponse().getBody().getItems().getItem().getLunMonth() + "월 " +
