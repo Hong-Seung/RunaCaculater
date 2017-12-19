@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">음력계산기</string>
-    <string name="banner_ad_unit_id">ca-app-pub-3008643822833798~5909809915</string>
+    <!-- 임시번호 -->
+    <!--<string name="banner_ad_unit_id">ca-app-pub-3008643822833798~5909809915</string>-->
+    <!--string<string name="banner_ad_unit_id">ca-app-pub-3940256099942544/5224354917</string>-->
+
+    <string name="banner_ad_unit_id">ca-app-pub-3008643822833798/3322905839</string>
+    <!--<string name="banner_ad_unit_id">ca-app-pub-3008643822833798~4851609920</string>-->
 </resources>

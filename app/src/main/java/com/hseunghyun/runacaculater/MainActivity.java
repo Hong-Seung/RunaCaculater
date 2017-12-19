@@ -86,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
         //광고
         mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice("28A5DF817CB6C88082D4900F3C6D3C73")
                 .build();
         mAdView.loadAd(adRequest);
 
@@ -169,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
 
                 outputSunResult.setText(runa.getResponse().getBody().getItems().getItem().getSolYear() + "년 " +
                         runa.getResponse().getBody().getItems().getItem().getSolMonth() + "월 " +
-                runa.getResponse().getBody().getItems().getItem().getSolDay()+"일");
+                        runa.getResponse().getBody().getItems().getItem().getSolDay() + "일");
 
                 outputRunResult.setText(runa.getResponse().getBody().getItems().getItem().getLunLeapmonth() + " " +
                         runa.getResponse().getBody().getItems().getItem().getLunYear() + "년 " +
