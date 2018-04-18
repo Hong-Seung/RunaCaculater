@@ -5,5 +5,10 @@
     <!--string<string name="banner_ad_unit_id">ca-app-pub-3940256099942544/5224354917</string>-->
 
     <string name="banner_ad_unit_id">ca-app-pub-3008643822833798/3322905839</string>
+    <string name="minmax_1400_2050_n">1400년 ~ 2050년  변환 가능</string>
+    <string name="input_year">년</string>
+    <string name="input_month">월</string>
+    <string name="input_date">일</string>
+    <string name="button_sun_to_lun">음력으로 변환</string>
     <!--<string name="banner_ad_unit_id">ca-app-pub-3008643822833798~4851609920</string>-->
 </resources>
