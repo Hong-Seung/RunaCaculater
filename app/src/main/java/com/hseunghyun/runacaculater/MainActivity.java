@@ -166,17 +166,20 @@ public class MainActivity extends AppCompatActivity {
                 Runa runa = response.body();
                 assert runa != null;
 
+                //입력한 날짜 다시 보여주기
                 outputSunResult.setText(runa.getResponse().getBody().getItems().getItem().getSolYear() + "년 " +
                         runa.getResponse().getBody().getItems().getItem().getSolMonth() + "월 " +
                         runa.getResponse().getBody().getItems().getItem().getSolDay() + "일");
 
+                //출력된 음력일
                 outputRunResult.setText(runa.getResponse().getBody().getItems().getItem().getLunLeapmonth() + " " +
-                        runa.getResponse().getBody().getItems().getItem().getLunYear() + "년 " +
+                        runa.getResponse().getBody().getItems().getItem().getLunYear() + "년 " + "\n" +
                         runa.getResponse().getBody().getItems().getItem().getLunMonth() + "월 " +
                         runa.getResponse().getBody().getItems().getItem().getLunDay() + "일");
 
 //                Toast.makeText(MainActivity.this, "성공", Toast.LENGTH_SHORT).show();
 
+                //출력된 음력간지
                 outputRunaResult.setText(runa.getResponse().getBody().getItems().getItem().getLunSecha() + "년  "
                         + runa.getResponse().getBody().getItems().getItem().getLunWolgeon() + "월  "
                         + runa.getResponse().getBody().getItems().getItem().getLunIljin() + "일");

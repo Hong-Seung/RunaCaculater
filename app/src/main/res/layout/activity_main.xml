@@ -65,7 +65,7 @@
                 android:maxLength="4"
                 android:textColor="#ffffff"
                 android:textColorHint="#858585"
-                android:textSize="48sp" />
+                android:textSize="40sp" />
 
             <EditText
                 android:id="@+id/input_sola_month"
@@ -78,7 +78,7 @@
                 android:maxLength="2"
                 android:textColor="#ffffff"
                 android:textColorHint="#858585"
-                android:textSize="48sp" />
+                android:textSize="40sp" />
 
             <EditText
                 android:id="@+id/input_sola_day"
@@ -91,7 +91,7 @@
                 android:maxLength="2"
                 android:textColor="#ffffff"
                 android:textColorHint="#858585"
-                android:textSize="48sp" />
+                android:textSize="40sp" />
 
 
         </LinearLayout>
