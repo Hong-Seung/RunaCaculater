@@ -3,6 +3,9 @@
     package="com.hseunghyun.runacaculater">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <!--인터넷 상태 체크-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
